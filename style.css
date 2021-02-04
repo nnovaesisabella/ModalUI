@@ -1,0 +1,143 @@
+@import url("./main.css");
+@import url("./modal.css"); /*importar arquivo style*/
+/* Font*/
+@import url("https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+:root {
+    --mindnigthblue: #191970;
+    --brigthred: #f9423d;
+    --white: #ffff;
+    --ligthred: #f9433dcc;
+    --orangered: #ff4500;
+    --goldenrod: #ffd700;
+    --mintcream: #f5fffa;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    padding: 0 30px;
+}
+.navbar {
+    background: var(--mindnigthblue);
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: var(--orangered);
+    font-weight: 700;
+    letter-spacing: 1.9px;
+    font-family: "Oswald", cursive;
+}
+.logo i {
+    padding: 10px;
+    color: var(--white) !important;
+}
+
+.navbar .nav-menu {
+    display: inline-flex;
+    list-style: none;
+    width: 40%;
+    justify-content: center;
+}
+.nav-menu .nav-links {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0 16px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.nav-menu .nav-links:hover {
+    color: var(--goldenrod);
+    font-weight: 900;
+    transition: all 0.5s ease-in-out;
+}
+.nav-menu .nav-links-btn {
+    padding: 6px 18px;
+    background: var(--orangered);
+    border: none;
+    border-radius: 6px;
+}
+
+/* Icons */
+.icon-burger {
+    color: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+.icon-close {
+    color: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: none;
+}
+
+/* Mobile */
+
+@media (max-width: 1352px) {
+    .navbar .nav-menu {
+        width: 100%;
+    }
+}
+@media (max-width: 962px) {
+    .logo {
+        justify-content: center;
+        width: 50%;
+        margin-left: 40px;
+    }
+    .navbar .nav-menu {
+        display: none;
+        position: fixed;
+        top: 13vh;
+        left: 0;
+        height: 100vh;
+        width: 60%;
+        background: var(--mindnigthblue);
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        left: -100%;
+        z-index: 1;
+    }
+    .navbar .nav-menu.active {
+        left: 0%;
+    }
+    .navbar .nav-menu li {
+        margin-top: 40px;
+    }
+    .icon {
+        display: block;
+    }
+    .icon.hide {
+        display: none;
+    }
+}
+@media (max-width: 386px) {
+    .logo {
+        display: none;
+    }
+}
